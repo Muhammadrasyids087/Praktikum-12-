@@ -1,0 +1,78 @@
+<!DOCTYPE html> 
+ <html lang="en"> 
+ <head> 
+   <meta charset="UTF-8"> 
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   <title>Form Validator</title> 
+   <style> 
+     body { 
+       font-family: Arial, sans-serif; 
+       margin: 15px;
+       background-color: grey;
+     } 
+     label { 
+       display: block; 
+       margin-bottom: 10px; 
+     } 
+     input { 
+       width: 100%; 
+       padding: 10px; 
+       margin-bottom: 16px; 
+     } 
+  
+     button{
+     text-align: center;
+     background-color: rgb(79, 119, 79); 
+     border: 4px solid rgb(79, 119, 79); 
+     border-radius: 50px; 
+     box-shadow: 0 0 10px rgb(79, 119, 79); 
+     margin: 10px auto; 
+     color: white;
+     width: 145px;
+     padding: 10px;
+     float: right;
+     } 
+   </style> 
+ </head> 
+ <body> 
+  
+   <h2>Formulir Validasi Data</h2> 
+   <form id="myForm"> 
+     <label for="name">Name:</label> 
+     <input type="text" id="name" name="name" placeholder="Nama Lengkap"> 
+  
+     <label for="email">Email:</label> 
+     <input type="email" id="email" name="email" placeholder="muha54@gmail.com"> 
+  
+     <label for="jam">Jam Berangkat:</label> 
+     <input type="time" id="jam" name="jam_berangkat" placeholder="Waktu Berangkat"> 
+  
+     <label for="tujuan">Tempat Tujuan:</label> 
+     <input type="text" id="tujuan" name="tujuan_destinadi" placeholder="Tujuan Destinasi Anda"> 
+  
+     <label for="jumlah">Jumlah Tiket:</label> 
+     <input type="number" id="jumlah" name="jumlah_tiket"><br> 
+  
+  
+     <button type="button" onclick="validateForm()">SUBMIT</button> 
+   </form> 
+  
+   <script> 
+     function validateForm() { 
+       var name = document.getElementById("name").value; 
+       var email = document.getElementById("email").value; 
+       var jam = document.getElementById("jam").value; 
+       var tujuan = document.getElementById("tujuan").value; 
+       var jumlah = document.getElementById("jumlah").value; 
+       if (name == "" || email == "" || jam == "" || tujuan == "" || jumlah == "") { 
+         alert("Form harus diisi!"); 
+       } else { 
+         alert("Form selesai diisi!"); 
+       } 
+         
+       } 
+  
+   </script> 
+  
+ </body> 
+ </html>

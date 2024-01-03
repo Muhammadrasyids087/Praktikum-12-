@@ -1,0 +1,75 @@
+<!DOCTYPE html> 
+ <html lang="en"> 
+ <head> 
+   <meta charset="UTF-8"> 
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   <title>Currency Converter</title>
+   
+   <style> 
+     body { 
+       font-family: Arial, sans-serif; 
+       margin: 20px;
+       background-color: gray;
+     } 
+     label, select, input { 
+       margin-bottom: 10px; 
+       display: block; 
+       width: 100%; 
+     } 
+   </style> 
+ </head> 
+ <body>
+    <fieldset>
+        <legend> Kurs Rupiah - Mata Uang Asing</legend> 
+  
+   <form id="currencyForm"> 
+     <label for="amount">Masukan Jumlah Uang yang akan diubah:</label> 
+     <input type="number" id="amount" name="amount" min="0"> 
+  
+     <label for="currency">Pilih Mata Uang:</label> 
+     <select id="currency" name="currency"> 
+       <option value="USD">US Dollar (USD)</option> 
+       <option value="SGD">Singapore Dollar (SGD)</option>
+       <option value="PHP">Philipin Peso (PHP)</option>
+       <option value="RUB">Rusia Rubel (RUB)</option>
+       <option value="MYR">Malaysia Ringgit (MYR)</option> 
+       <option value="JPY">Japan Yen (JPY)</option> 
+       <option value="EUR">Euro (EUR)</option> 
+       <option value="SAR">Saudi Riyal (SAR)</option>
+       <option value="CNY">China Yuan (CNY)</option>
+     </select> 
+  
+     <button type="button" onclick="convertCurrency()">Convert</button> 
+  
+     <label for="result">Hasil Rupiah Indonesia (IDR):</label> 
+     <input type="text" id="result" name="result" readonly> 
+   </form> 
+  
+   <script> 
+     function convertCurrency() { 
+       let amount = document.getElementById("amount").value; 
+       let currency = document.getElementById("currency").value; 
+  
+       // nilai terhadap rupiah 
+       let exchangeRate = { 
+         USD: 15544, 
+         SGD: 11718,
+         PHP: 279,
+         RUB: 171, 
+         JPY: 109, 
+         EUR: 17036, 
+         SAR: 4145,
+         CNY: 2177,
+       }; 
+  
+        
+       let result = amount * exchangeRate[currency]; 
+  
+        
+       document.getElementById("result").value = result.toLocaleString(); 
+     } 
+   </script>
+   </fieldset>
+  
+ </body> 
+ </html>
